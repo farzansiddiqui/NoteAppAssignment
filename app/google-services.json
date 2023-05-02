@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "637041568754",
+    "project_id": "noteappassignment",
+    "storage_bucket": "noteappassignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637041568754:android:987bc558e10316e235196b",
+        "android_client_info": {
+          "package_name": "com.siddiqui.noteappassignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637041568754-dvbddmhi1q82plbbq2tv5c1jv5gpa7ne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArgGywi2GNZ7pSiPOtUzmCayaUfFlF6oQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637041568754-dvbddmhi1q82plbbq2tv5c1jv5gpa7ne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

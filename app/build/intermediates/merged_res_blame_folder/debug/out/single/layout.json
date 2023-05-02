@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.siddiqui.noteappassignment.app-mergeDebugResources-32:/layout/activity_main.xml",
+        "source": "com.siddiqui.noteappassignment.app-main-35:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.siddiqui.noteappassignment.app-mergeDebugResources-32:/layout/btm_sheet_layout.xml",
+        "source": "com.siddiqui.noteappassignment.app-main-35:/layout/btm_sheet_layout.xml"
+    },
+    {
+        "merged": "com.siddiqui.noteappassignment.app-mergeDebugResources-32:/layout/list_item.xml",
+        "source": "com.siddiqui.noteappassignment.app-main-35:/layout/list_item.xml"
+    }
+]
