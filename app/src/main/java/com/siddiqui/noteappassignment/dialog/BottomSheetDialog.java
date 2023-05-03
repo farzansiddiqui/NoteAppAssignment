@@ -60,7 +60,6 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         try {
             listItem.setTitle(title);
             listItem.setCheckBox(false);
-            Log.d("TAG", "addToDataBase: ");
             databaseReference.push().setValue(listItem);
             Toast.makeText(requireActivity(), "Title Added", Toast.LENGTH_SHORT).show();
             dismiss();

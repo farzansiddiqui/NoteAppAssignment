@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,12 +22,14 @@ public class MainActivity extends AppCompatActivity implements BottomSheetListen
     ActivityMainBinding binding;
     ArrayList<ListItem> arrayList = new ArrayList<>();
     TaskAdapter adapter;
+    public static final String TAG = "TAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Log.d(TAG, "onCreate: ");
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -38,10 +41,46 @@ public class MainActivity extends AppCompatActivity implements BottomSheetListen
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart:");
+    }
+
+    @Override
     public void onDataReceived(String data) {
             arrayList.add(new ListItem(data, false));
             adapter = new TaskAdapter(arrayList);
             binding.recyclerView.setAdapter(adapter);
             adapter.notifyItemChanged(adapter.getItemCount());
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: ");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume: ");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause: ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
     }
 }
