@@ -93,6 +93,5 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
 
     public void setListener(BottomSheetListener mListener) {
         this.mListener = mListener;
-
     }
 }
