@@ -2,7 +2,9 @@ package com.siddiqui.noteappassignment.pojo;
 
 public class ListItem {
     String title;
+    String androidID;
     boolean checkBox = false;
+
 
     public ListItem() {
     }
@@ -26,5 +28,13 @@ public class ListItem {
 
     public void setCheckBox(boolean checkBox) {
         this.checkBox = checkBox;
+    }
+
+    public String getAndroidID() {
+        return androidID;
+    }
+
+    public void setAndroidID(String androidID) {
+        this.androidID = androidID;
     }
 }

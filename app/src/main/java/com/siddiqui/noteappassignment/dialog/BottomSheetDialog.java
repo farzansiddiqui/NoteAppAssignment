@@ -1,7 +1,9 @@
 package com.siddiqui.noteappassignment.dialog;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +22,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.siddiqui.noteappassignment.BuildConfig;
 import com.siddiqui.noteappassignment.R;
 import com.siddiqui.noteappassignment.inteface.BottomSheetListener;
 import com.siddiqui.noteappassignment.pojo.ListItem;
@@ -44,6 +47,7 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         databaseReference = firebaseDatabase.getReference("Tasks");
         listItem = new ListItem();
 
+
         button.setOnClickListener(view -> {
             if (!Objects.requireNonNull(inputEditText.getText()).toString().isEmpty()) {
                 addToDataBase(inputEditText.getText().toString());
@@ -60,11 +64,13 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
         try {
             listItem.setTitle(title);
             listItem.setCheckBox(false);
-            databaseReference.push().setValue(listItem);
+            @SuppressLint("HardwareIds")
+            String deviceId = Settings.Secure.getString(requireActivity().getContentResolver(), Settings.Secure.ANDROID_ID);
+            databaseReference.child(deviceId).child("Notes").push().setValue(listItem);
             Toast.makeText(requireActivity(), "Title Added", Toast.LENGTH_SHORT).show();
             dismiss();
-        }catch (Exception e){
-            Log.d("TAG", "addToDataBase: "+e);
+        } catch (Exception e) {
+            Log.d("TAG", "addToDataBase: " + e);
         }
 
     }
